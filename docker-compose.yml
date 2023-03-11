@@ -1,0 +1,16 @@
+version: '3.7'
+
+services:
+
+  cpps_ipdc_frontend:
+    container_name: cpps_ipdc_frontend
+    build: ./
+    volumes:
+      - './:/app'
+      - '/app/node_modules'
+    ports:
+      - 3000:3366
+    stdin_open: true
+    environment:
+      - CHOKIDAR_USEPOLLING=true
+    command: npm start
